@@ -19,9 +19,8 @@ namespace cnl {
     struct scale<Digits, Radix, _impl::number<Rep>> {
         using _value_type = _impl::number<Rep>;
         CNL_NODISCARD constexpr auto operator()(_value_type const& s) const
-        -> decltype(_impl::from_rep<_value_type>(_impl::scale<Digits, Radix>(_impl::to_rep(s))))
         {
-            return _impl::default_scale<Digits, Radix, _value_type>{}(s);
+            return _impl::from_rep<_value_type>(_impl::scale<Digits, Radix>(_impl::to_rep(s)));
         }
     };
 }
