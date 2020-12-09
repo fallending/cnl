@@ -82,7 +82,7 @@ namespace cnl {
             }
 
             template<class Rep, int Exponent>
-            CNL_NODISCARD constexpr inline scaled_integer<Rep, power<Exponent>> evaluate_polynomial(
+            CNL_NODISCARD inline constexpr scaled_integer<Rep, power<Exponent>> evaluate_polynomial(
                     scaled_integer<Rep, power<Exponent>> xf) {
                 using fp = scaled_integer<Rep, power<Exponent>>;
 
@@ -119,7 +119,7 @@ namespace cnl {
 
             //for a positive exponent, some work needs to be done
             template<class Rep, int Exponent>
-            CNL_NODISCARD constexpr inline auto exp2m1_0to1(scaled_integer<Rep, power<Exponent>> x)
+            CNL_NODISCARD inline constexpr auto exp2m1_0to1(scaled_integer<Rep, power<Exponent>> x)
             -> _impl::enable_if_t<(Exponent<0), make_largest_ufraction<scaled_integer<Rep, power<Exponent>>>> {
                 //Build the type with the same number of bits, all fraction,
                 //and unsigned. That should be enough to exactly hold enough bits
