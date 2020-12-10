@@ -15,13 +15,10 @@
 namespace cnl {
     namespace _impl {
         template<typename T>
-        struct is_number : std::false_type {
-        };
+        inline constexpr auto is_number = false;
 
         template<typename Rep, class Tag>
-        struct is_number<_impl::number<Rep, Tag>>
-                : std::true_type {
-        };
+        inline constexpr auto is_number<_impl::number<Rep, Tag>> = true;
     }
 }
 

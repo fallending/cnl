@@ -14,9 +14,7 @@
 namespace cnl {
     namespace _impl {
         template<int Digits, typename Narrowest>
-        struct is_number<elastic_integer<Digits, Narrowest>>
-            : public std::true_type {
-        };
+        inline constexpr auto is_number<elastic_integer<Digits, Narrowest>> = true;
     }
 }
 
